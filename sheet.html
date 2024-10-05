@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Sheet Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Excel Sheet Viewer</h1>
+        <div class="input-box">
+            <label for="excel-url">Enter Excel File URL:</label>
+            <input type="text" id="excel-url" placeholder="Enter the URL of the Excel file">
+            <button id="fetch-sheets">Get Sheet Names</button>
+        </div>
+        <div class="operations-panel">
+            <div class="input-group">
+                <label for="primary-column">Enter Primary Column (e.g., A):</label>
+                <input type="text" id="primary-column" placeholder="A" class="small-input">
+            </div>
+            <div class="input-group">
+                <label for="operation-columns">Enter Columns for Operation (e.g., A,B,C):</label>
+                <input type="text" id="operation-columns" placeholder="A,B,C" class="small-input">
+            </div>
+            <div class="null-selection">
+                <label for="null-check">Check for Null:</label>
+                <select id="null-check">
+                    <option value="null">Null</option>
+                    <option value="not-null">Not Null</option>
+                </select>
+            </div>
+            <button id="apply-operation">Apply Operation</button>
+        </div>
+        <div id="sheet-list" class="sheet-list"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
